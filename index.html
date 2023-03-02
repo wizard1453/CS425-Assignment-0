@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<style>
+    body {
+        background-color: gainsboro;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    #glcanvas {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        width: 80%;
+        height: 80%;
+        overflow: auto;
+        background-color: aqua;
+    }
+
+    #config_panel {
+        position: absolute;
+        background-color: gray;
+        border: 3px solid darkblue;
+        position: relative;
+        /* height: 205px;*/
+        width: 360px; 
+        color: white;
+        text-align: center;
+    }
+
+    #config_panel_label {
+        font-size: 24px;
+    }
+
+    .slider_container {
+        padding-top: 10px;
+    }
+
+    .slider {
+        width: 220px;
+    }
+</style>
+
+<body>
+    <script src="assignment0.js" type="module"></script>
+    <canvas id="glcanvas"></canvas>
+    
+    <!-- Configuration Pannel -->
+    <div id="config_panel">
+        <table>
+            <label for="config_panel" id="config_panel_label">Config Pannel</label>
+            <tr>
+                <td>R</td>
+                <td><input id="sliderR" class = "slider" type="range" min="0" max="255" value="0" oninput="window.updateColor()"></td>
+            </tr>
+            <tr>
+                <td>G</td>
+                <td><input id="sliderG" class = "slider" type="range" min="0" max="255" value="0" oninput="window.updateColor()"></td>
+            </tr>
+            <tr>
+                <td>B</td>
+                <td><input id="sliderB" class = "slider" type="range" min="0" max="255" value="0" oninput="window.updateColor()"></td>
+            </tr>
+            <!-- <tr>
+                <td>Alpha</td>
+                <td><input id="sliderA" class = "slider" type="range" min="0" max="255" value="255" oninput="window.updateColor()"></td>
+            </tr> -->
+            <tr>
+                <td>Triangles</td>
+                <td><input id="sliderTri" class = "slider" type="range" min="1" max="100" value="1" oninput="window.FindTriNumber()"></td>
+            </tr>
+            <tr>
+                <td>Toggle Color</td>
+                <td><input type="checkbox" id="toggle_color" onchange="window.checkToggle()"></td>
+            </tr>
+            <tr>
+                <td>Upload Json</td>
+                <td><input type="file" name="file" accept="application/JSON" onchange='window.openFile()'></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
